@@ -14,4 +14,9 @@ router.put('/:id', protect, postsController.updatePost);
 router.delete('/:id', protect, postsController.deletePost);
 router.post('/:id/like', protect, postsController.likePost);
 
+// Comment routes
+router.get('/:postId/comments', commentsController.getComments);
+router.post('/:postId/comments', protect, commentsController.createComment);
+router.delete('/:postId/comments/:commentId', protect, commentsController.deleteComment);
+
 module.exports = router;
